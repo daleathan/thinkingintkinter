@@ -772,8 +772,7 @@ def __put_buttons_in_buttonframe(choices):
 
 def run_thinking():
 
-	choices = string.split(
-"""tt000.py - introduction 
+	choices ="""tt000.py - introduction 
 tt010.py - simplest possible Tkinter program: 3 statements 
 tt020.py - creating a GUI object; packing; containers vs. widgets 
 tt030.py - creating a widget and putting it in a frame 
@@ -791,7 +790,7 @@ tt079.py - passing arguments to event handlers (part 3) - solving it with curryi
 tt080.py - widget options and pack settings 
 tt090.py - nesting frames 
 tt095.py - Window Manager methods & controlling the size of windows with the geometry option 
-tt100.py - pack options: side, expand, fill, anchor """, "\n")
+tt100.py - pack options: side, expand, fill, anchor """.split("\n")
 	
 
 	title = "Thinking in Tkinter"
@@ -818,9 +817,9 @@ tt100.py - pack options: side, expand, fill, anchor """, "\n")
 		codebox(msg2, title, t)
 
 		try:
-			exec "reload(" + program_name + ")"
+			exec("reload(" + program_name + ")")
 		except:
-			exec "import " + program_name 
+			exec("import " + program_name )
 
 
 if __name__ == '__main__':
