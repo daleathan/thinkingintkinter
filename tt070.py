@@ -108,7 +108,7 @@ of the event and describing the event.
 
 [Revised: 2002-09-26]
 >"""
-from Tkinter import *
+from tkinter import *
 
 class MyApp:
 	def __init__(self, parent):
@@ -144,11 +144,11 @@ def report_event(event):     ### (5)
 	"""Print a description of an event, based on its attributes.
 	"""
 	event_name = {"2": "KeyPress", "4": "ButtonPress"}
-	print "Time:", str(event.time)   ### (6)
-	print "EventType=" + str(event.type), \
+	print("Time:", str(event.time))   ### (6)
+	print("EventType=" + str(event.type), \
 		event_name[str(event.type)],\
 		"EventWidgetId=" + str(event.widget), \
-		"EventKeySymbol=" + str(event.keysym)
+		"EventKeySymbol=" + str(event.keysym))
 		
 			
 root = Tk()

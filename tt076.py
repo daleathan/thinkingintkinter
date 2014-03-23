@@ -93,7 +93,7 @@ the right side of the titlebar).
 
 [revised: 2002-10-05]
 >"""
-from Tkinter import *
+from tkinter import *
 
 class MyApp:
 	def __init__(self, parent):
@@ -118,21 +118,21 @@ class MyApp:
 		self.whiteButton.pack(side=LEFT)
 		
 	def redButtonClick(self):   
-		print "RED    button clicked.  Previous button invoked was", self.myLastButtonInvoked  ### 2
+		print("RED    button clicked.  Previous button invoked was", self.myLastButtonInvoked ) ### 2
 		self.myLastButtonInvoked = "RED"  ### 1
 		
 	def yellowButtonClick(self):  
-		print "YELLOW button clicked.  Previous button invoked was", self.myLastButtonInvoked ### 2
+		print("YELLOW button clicked.  Previous button invoked was", self.myLastButtonInvoked ) ### 2
 		self.myLastButtonInvoked = "YELLOW" ### 1
 				
 	def whiteButtonClick(self):  
-		print "WHITE  button clicked.  Previous button invoked was", self.myLastButtonInvoked ### 2
+		print("WHITE  button clicked.  Previous button invoked was", self.myLastButtonInvoked ) ### 2
 		self.myLastButtonInvoked = "WHITE" ### 1
        
 		
-print "\n"*100 # a simple way to clear the screen
-print "Starting..."					
+print("\n"*100 )# a simple way to clear the screen
+print("Starting...")
 root = Tk()
 myapp = MyApp(root)
 root.mainloop()
-print "... Done!"
+print("... Done!")

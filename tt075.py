@@ -72,7 +72,7 @@ key as well as the spacebar.
 
 [revised: 2002-10-01]
 >"""
-from Tkinter import *
+from tkinter import *
 
 class MyApp:
 	def __init__(self, parent):
@@ -92,22 +92,22 @@ class MyApp:
 		self.button2.pack(side=RIGHT)
 		
 	def button1Click(self):  ### (2)
-		print "button1Click event handler" 
+		print("button1Click event handler")
 		if self.button1["background"] == "green":  
 			self.button1["background"] = "yellow"
 		else:
 			self.button1["background"] = "green"
 	
 	def button2Click(self): ### (2)
-		print "button2Click event handler" 
+		print("button2Click event handler")
 		self.myParent.destroy()      
   
 	def button1Click_a(self, event):  ### (3)
-		print "button1Click_a event handler (a wrapper)" 
+		print("button1Click_a event handler (a wrapper)")
 		self.button1Click()
 				
 	def button2Click_a(self, event):  ### (3)
-		print "button2Click_a event handler (a wrapper)" 
+		print("button2Click_a event handler (a wrapper)")
 		self.button2Click()
 				
 							

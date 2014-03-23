@@ -7,6 +7,7 @@ Thinking In Tkinter.
 
 """===============================================================
 REVISION HISTORY
+3 2014-03-23 Transfered to github and start to update for python 3.x
 2 2002-10-08 re-cloned from easygui.py version 24, to pick up font fixes.
 1 2002-09-21 Steve Ferg cloned it from easygui.py version 23.
 =================================================================="""
@@ -63,15 +64,15 @@ REVISION HISTORY
 =================================================================="""
 
 import sys
-from Tkinter import *
+from tkinter import *
 if TkVersion < 8.0 :
-	print "\n" * 3
-	print "*"*75
-	print "Running Tk version:", TkVersion 
-	print "You must be using Tk version 8.0 or greater to use EasyGui."
-	print "Terminating."
-	print "*"*75
-	print "\n" * 3
+	print("\n" * 3 )
+	print("*"*75 )
+	print("Running Tk version:", TkVersion )
+	print("You must be using Tk version 8.0 or greater to use EasyGui." )
+	print("Terminating." )
+	print("*"*75 )
+	print("\n" * 3 )
 	sys.exit(0)
 	
 
@@ -86,7 +87,7 @@ SMALL_FONT_SIZE       =  9
 CODEBOX_FONT_SIZE     =  9
 TEXTBOX_FONT_SIZE     = DEFAULT_FONT_SIZE
 
-import tkFileDialog
+import tkinter.filedialog as tkFileDialog
 
 #-------------------------------------------------------------------
 # various boxes built on top of the basic buttonbox
@@ -461,8 +462,8 @@ def __choiceboxChoice(event):
 	choice_index = choiceboxWidget.curselection()
 	__choiceboxText = choiceboxWidget.get(choice_index)
 	__a_button_was_clicked = 1
-	# print "Debugging> mouse-event=", event, " event.type=", event.type
-	# print "Debugging> choice =", choice_index, __choiceboxText
+	# print("Debugging> mouse-event=", event, " event.type=", event.type )
+	# print("Debugging> choice =", choice_index, __choiceboxText )
 	root.quit()
 
 
@@ -478,7 +479,7 @@ def KeyboardListener(event):
 	key = event.keysym
 	if len(key) <= 1:
 		if key in string.printable:
-			## print key
+			## print(key)
 			# now find it in list.....
 
 			## before we clear the list, remember the selected member

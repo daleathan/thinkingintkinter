@@ -40,7 +40,7 @@ more to do, and ends.
 [revised: 2003-02-23]
 >""" 
 
-from Tkinter import * ### (1)
+from tkinter import * ### (1)
 
 root = Tk()           ### (2) 
 root.mainloop()       ### (3)

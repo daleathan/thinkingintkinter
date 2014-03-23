@@ -98,7 +98,7 @@ fix that in a later program.
 [revised: 2002-10-01]
 >"""
 
-from Tkinter import *
+from tkinter import *
 
 class MyApp:
 	def __init__(self, parent):

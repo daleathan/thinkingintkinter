@@ -64,7 +64,7 @@ When you run this program, you will now see the two buttons, side by side.
 
 [revised: 2002-10-01]
 >"""
-from Tkinter import *
+from tkinter import *
 
 class MyApp:
 	def __init__(self, parent):

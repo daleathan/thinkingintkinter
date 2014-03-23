@@ -42,7 +42,7 @@ program, we will see why they arrange themselves this way, and see how to
 arrange them differently.
 
 >"""
-from Tkinter import *
+from tkinter import *
 
 class MyApp:
 	def __init__(self, parent):

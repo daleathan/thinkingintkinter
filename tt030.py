@@ -47,7 +47,7 @@ Note how myContainer1 has stretched to accommodate button1.
 
 [revised: 2002-10-01]
 >"""
-from Tkinter import *
+from tkinter import *
 
 root = Tk()
  

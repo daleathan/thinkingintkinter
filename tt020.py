@@ -91,11 +91,11 @@ Container1, and you will see how Container1 stretches to accommodate them.
 
 [revised: 2003-02-24]
 >"""
-from Tkinter import *
+from tkinter import *
 
 root = Tk()
 
 myContainer1 = Frame(root)  ### (1)
 myContainer1.pack()         ### (2)
 
-root.mainloop()       
+root.mainloop()

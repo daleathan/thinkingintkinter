@@ -85,7 +85,7 @@ No functionality has been changed -- only how the code is structured.
 
 [revised: 2003-02-23]
 >"""
-from Tkinter import *
+from tkinter import *
 
 class MyApp:                         ### (1)
 	def __init__(self, myParent):      ### (1a)

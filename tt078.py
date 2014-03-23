@@ -58,8 +58,8 @@ COMMAND BINDING
 Originally, we thought the following statement might work:
 
   self.button1 = Button(self.myContainer1, 
-  	command = self.buttonHandler(button_name, 1, "Good stuff!")
-  	)
+    command = self.buttonHandler(button_name, 1, "Good stuff!")
+    )
 
 ... but we found out that it didn't work the way we thought it would. 
 
@@ -77,17 +77,17 @@ EVENT BINDING
 Happily, lambda also gives us a way to parameterize event binding.  Instead of:
 
      self.button1.bind("<Return>", 
-     	self.buttonHandler_a(event, button_name, 1, "Good stuff!"))
+        self.buttonHandler_a(event, button_name, 1, "Good stuff!"))
 
 (which wouldn't work, because there was no way to include the event argument in
 the argument list), we can use lambda, this way:
 
-		# event binding -- passing the event as an argument
-		self.button1.bind("<Return>", 
-			lambda 
-			event, arg1=button_name, arg2=1, arg3="Good stuff!" : 
-			self.buttonHandler_a(event, arg1, arg2, arg3)
-			)
+        # event binding -- passing the event as an argument
+        self.button1.bind("<Return>", 
+            lambda 
+            event, arg1=button_name, arg2=1, arg3="Good stuff!" : 
+            self.buttonHandler_a(event, arg1, arg2, arg3)
+            )
 
 [Note that "event" here is a variable name -- it is not a Python keyword or 
 anything like that.  This example uses the name "event" for the event argument, 
@@ -102,12 +102,12 @@ self.buttonHandler_a function.
 To illustrate this technique, we will code the event binding for button2
 differently than we did for button1. This is what we do with button2:
 
-		# event binding -- without passing the event as an argument
-		self.button2.bind("<Return>", 
-			lambda 
-			event, arg1=button_name, arg2=2, arg3="Bad  stuff!" : 
-			self.buttonHandler(arg1, arg2, arg3)
-			)
+        # event binding -- without passing the event as an argument
+        self.button2.bind("<Return>", 
+            lambda 
+            event, arg1=button_name, arg2=2, arg3="Bad  stuff!" : 
+            self.buttonHandler(arg1, arg2, arg3)
+            )
 
 
 PROGRAM BEHAVIOR
@@ -129,69 +129,69 @@ the arguments that were passed to the buttonHandler function.
 
 [revised: 2003-02-23]
 >"""
-from Tkinter import *
+from tkinter import *
 
 class MyApp:
-	def __init__(self, parent):
-		self.myParent = parent   
-		self.myContainer1 = Frame(parent)
-		self.myContainer1.pack()
-		
-		#------------------ BUTTON #1 ------------------------------------
-		button_name = "OK"
-		
-		# command binding
-		self.button1 = Button(self.myContainer1,
-			command = lambda 
-			arg1=button_name, arg2=1, arg3="Good stuff!" :
-			self.buttonHandler(arg1, arg2, arg3)
-			)
-		
-		# event binding -- passing the event as an argument
-		self.button1.bind("<Return>", 
-			lambda 
-			event, arg1=button_name, arg2=1, arg3="Good stuff!" : 
-			self.buttonHandler_a(event, arg1, arg2, arg3)
-			)
-	     	
-		self.button1.configure(text=button_name, background="green")  
-		self.button1.pack(side=LEFT)
-		self.button1.focus_force()  # Put keyboard focus on button1    
-		
-		#------------------ BUTTON #2 ------------------------------------		
-		button_name = "Cancel"
-		
-		# command binding
-		self.button2 = Button(self.myContainer1,
-			command = lambda 
-			arg1=button_name, arg2=2, arg3="Bad  stuff!": 
-			self.buttonHandler(arg1, arg2, arg3)
-			)
+    def __init__(self, parent):
+        self.myParent = parent   
+        self.myContainer1 = Frame(parent)
+        self.myContainer1.pack()
+        
+        #------------------ BUTTON #1 ------------------------------------
+        button_name = "OK"
+        
+        # command binding
+        self.button1 = Button(self.myContainer1,
+            command = lambda 
+            arg1=button_name, arg2=1, arg3="Good stuff!" :
+            self.buttonHandler(arg1, arg2, arg3)
+            )
+        
+        # event binding -- passing the event as an argument
+        self.button1.bind("<Return>", 
+            lambda 
+            event, arg1=button_name, arg2=1, arg3="Good stuff!" : 
+            self.buttonHandler_a(event, arg1, arg2, arg3)
+            )
+            
+        self.button1.configure(text=button_name, background="green")  
+        self.button1.pack(side=LEFT)
+        self.button1.focus_force()  # Put keyboard focus on button1    
+        
+        #------------------ BUTTON #2 ------------------------------------      
+        button_name = "Cancel"
+        
+        # command binding
+        self.button2 = Button(self.myContainer1,
+            command = lambda 
+            arg1=button_name, arg2=2, arg3="Bad  stuff!": 
+            self.buttonHandler(arg1, arg2, arg3)
+            )
 
-		# event binding -- without passing the event as an argument
-		self.button2.bind("<Return>", 
-			lambda 
-			event, arg1=button_name, arg2=2, arg3="Bad  stuff!" : 
-			self.buttonHandler(arg1, arg2, arg3)
-			)
-	
-		self.button2.configure(text=button_name, background="red")
-		self.button2.pack(side=LEFT)   
-		
-		
-	def buttonHandler(self, argument1, argument2, argument3):   
-		print "    buttonHandler routine received arguments:" \
-			, argument1.ljust(8), argument2, argument3
-		
- 	def buttonHandler_a(self, event, argument1, argument2, argument3):
-		print "buttonHandler_a received event", event
-		self.buttonHandler(argument1, argument2, argument3)
-		
-				
-print "\n"*100 # clear the screen
-print "Starting program tt078."								
+        # event binding -- without passing the event as an argument
+        self.button2.bind("<Return>", 
+            lambda 
+            event, arg1=button_name, arg2=2, arg3="Bad  stuff!" : 
+            self.buttonHandler(arg1, arg2, arg3)
+            )
+    
+        self.button2.configure(text=button_name, background="red")
+        self.button2.pack(side=LEFT)   
+        
+        
+    def buttonHandler(self, argument1, argument2, argument3):   
+        print("    buttonHandler routine received arguments:" \
+            , argument1.ljust(8), argument2, argument3 )
+        
+    def buttonHandler_a(self, event, argument1, argument2, argument3):
+        print("buttonHandler_a received event", event )
+        self.buttonHandler(argument1, argument2, argument3)
+        
+                
+print("\n"*100) # clear the screen
+print("Starting program tt078.")
 root = Tk()
 myapp = MyApp(root)
-print "Ready to start executing the event loop."
+print("Ready to start executing the event loop.")
 root.mainloop()
-print "Finished       executing the event loop."
+print("Finished       executing the event loop.")
