@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
+<HTML> 
+  <HEAD> <LINK REL="stylesheet" TYPE="text/css" HREF="../ferg.css">
+	 <META NAME="revisit-after" CONTENT="2 days">
+	 <META NAME="resource-type" CONTENT="document">
+	 <META CONTENT="text/html; charset=ISO-8859-1" HTTP-EQUIV="Content-Type">
+	 <META NAME="description"
+	  CONTENT="A short introduction to Tkinter - GUI programming in Python">
+	 <META NAME="keywords" CONTENT="Tkinter Python GUI programming"> 
+	 <TITLE>Thinking in Tkinter</TITLE> 
+  </HEAD> 
+  <BODY> 
+	 <TABLE WIDTH="100%"> 
+		<TR> 
+		  <TD WIDTH="10%" ALIGN="left"><A HREF="http://www.python.org"><IMG
+			 SRC="../python_logos/python_and_check_logo2.gif"
+			 ALT="Link to www.Python.org, the home page for the Python programming language"
+			 TITLE="Link to www.Python.org, the home page for the Python programming language"
+			 BORDER="0" ALIGN="MIDDLE" WIDTH="116" HEIGHT="116"></A> </TD> 
+		  <TD WIDTH="80%"> 
+			 <CENTER> 
+				<H1>Thinking in Tkinter</H1> <SPAN
+				CLASS="font-size: small"><A HREF="../projects/index.html">Home</A><BR> Updated:
+				2005-04-14 </SPAN></CENTER> </TD> 
+		  <TD WIDTH="10%" ALIGN="right"> 
+			 <CENTER><A
+				HREF="http://www.spreadfirefox.com/?q=affiliates&amp;id=0&amp;t=78"><IMG
+				BORDER="0" ALT="Get Firefox!" TITLE="Get Firefox!"
+				SRC="http://sfx-images.mozilla.org/affiliates/Buttons/120x60/get.gif"
+				WIDTH="120" HEIGHT="60"></A><!-- BEGIN WebSTAT Activation Code -->
+				<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript" SRC="http://hits.webstat.com/cgi-bin/wsv2.cgi?40046&WSpn=ThinkingInTkinter"></SCRIPT> 
+				<NOSCRIPT> 
+				  <P><A HREF="http://www.webstat.com">
+					 <IMG
+					  SRC="http://hits.webstat.com/scripts/wsb.php?ac=40046&WSpn=ThinkingInTkinter"
+					  BORDER="0" ALT="WebSTAT - Free Web Statistics" WIDTH="88" HEIGHT="30"></A> </P>
+				  </NOSCRIPT><!-- END WebSTAT Activation Code --></CENTER> </TD> 
+		</TR> 
+	 </TABLE> <HR SIZE="3" COLOR="tan"> 
+	 <P><!-- Creative Commons Licence -->
+		<A REL="license" HREF="http://creativecommons.org/licenses/by/2.0/"></A> 
+		<BR><SMALL><SMALL><A REL="license"
+		HREF="http://creativecommons.org/licenses/by/2.0/"><IMG
+		ALT="Creative Commons Licence" BORDER="0"
+		SRC="http://creativecommons.org/images/public/somerights20.gif" WIDTH="88"
+		HEIGHT="31" ALIGN="LEFT"></A> This work is licensed under the
+		<A REL="license" HREF="http://creativecommons.org/licenses/by/2.0/">Creative
+		Commons Attribution 2.0 License</A> You are free to copy, distribute, and
+		display the work, and to make derivative works (including translations). If you
+		do, you must give the original author credit. The author specifically permits
+		(and encourages) teachers to post, reproduce, and distribute some or all of
+		this material for use in their classes or by their students.</SMALL></SMALL><!-- /Creative Commons Licence -->
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+              xmlns:dc="http://purl.org/dc/elements/1.1/"
+              xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by/2.0/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+
+</rdf:RDF>
+
+--></P><HR SIZE="3" COLOR="tan"> 
+	 <H3>About <I>Thinking in Tkinter</I></H3> 
+	 <BLOCKQUOTE> 
+		<P>I've been trying to teach myself Tkinter out of various books, and I'm
+		  finding it more difficult than I think it should be.</P> 
+		<P>The problem is that the authors of the books want to rush into telling
+		  me about all of the widgets in the Tkinter toolbox, but never really pause to
+		  explain basic concepts. They don't explain how to "think in Tkinter". So I
+		  thought that I would try to write the kind of book that I wanted to read. Or at
+		  least the sketch of such a book.</P> 
+		<P><I>Thinking in Tkinter</I> consists of a few short programs that begin
+		  to explain how to think in Tkinter. In them, I don't attempt to catalog all of
+		  the types of widgets, attributes, and methods that are available in Tkinter. I
+		  just try to get started down the road of understanding some basic Tkinter
+		  concepts.</P> 
+		<P>These programs do not attempt to provide a comprehensive introduction
+		  to all aspects of Tkinter programming. For that, I refer you to Frederik
+		  Lundh's <A HREF="http://www.pythonware.com/library/index.htm">An Introduction
+		  to Tkinter</A>, <A
+		  HREF="http://www.nmt.edu/tcc/help/lang/python/tkinter.html">Tkinter: GUI
+		  Programming with Python</A> at the New Mexico Tech Computer Center, and the
+		  other useful references at the bottom of this page.</P> 
+		<P>Above all, I must emphasize that
+		  <A
+		  HREF="http://www.amazon.com/exec/obidos/ASIN/0130220280/qid=1031879522/sr=2-1/ref=sr_2_1/103-5004459-9331864">Practical
+		  Programming in Tcl and Tk</A> by Brent Welch is absolutely essential for
+		  working with Tk and Tkinter. <B>Get this book!</B></P> 
+		<P>Note that you should <U>not</U> run these programs under IDLE. &nbsp;
+		  IDLE is itself a Tkinter application, with its own "mainloop" that will
+		  conflict with the mainloop in these programs. If you really want to view and
+		  run these programs using IDLE, then -- <U><I>for each program</I></U> -- you
+		  should comment out the "mainloop" statement in the program before running
+		  it.</P> 
+		<P>This material has been substantially improved by feedback from folks
+		  on comp.lang.python. A big "Thank you!" to Alan Colburn, Jeff Epler, Greg
+		  Ewing, Tom Good, Steve Holden, Joseph Knapka, Gerrit Muller, Russell Owen, and
+		  Chad Netzer. Thanks to Terry Carroll for catching and reporting typos.</P> 
+		<P>A Brazilian/Portugese translation of <I>Thinking in Tkinter</I> is
+		  available at <A HREF="http://geocities.yahoo.com.br/grupopython/pensando.pdf">
+		  http://geocities.yahoo.com.br/grupopython/pensando.pdf</A>.</P> 
+		<P>Finally, if you are new to event-driven programming (which Tkinter
+		  requires) you may find <A
+		  HREF="../projects/ferg-event_driven_programming.html"> Introduction to
+		  Event-Driven Programming </A> useful.</P> </BLOCKQUOTE>
+	 <BR> 
+	 <H3>EasyGui</H3> 
+	 <BLOCKQUOTE>If you are less interested in learning Tkinter than in simply
+		putting a simple GUI front-end on your Python application, then
+		<A HREF="../easygui/index.html">EasyGui</A> may be what you need.</BLOCKQUOTE>
+	 <H3>Thinking in Tkinter</H3> 
+	 <BLOCKQUOTE> 
+		<P><I>Thinking in Tkinter</I> consists of a set of Python programs. Each
+		  program contains a long documentation string with text that explains certain
+		  concepts, followed by executable code that illustrates the concepts.</P> 
+		<H3><I>Thinking in Tkinter</I> &mdash; Formatted for reading and
+		  printing</H3> 
+		<P>Click <A HREF="all_programs.html">HERE</A> to read and print
+		  <I>Thinking in Tkinter.</I> This page contains all of the programs, formatted
+		  as a single document to facilitate printing and reading. <B>NOTE</B> however
+		  that you really have to download and run the programs to get their full
+		  benefit.</P> </BLOCKQUOTE>
+	 <BR> 
+	 <BLOCKQUOTE> 
+		<H3>All programs in a ZIP file</H3> 
+		<P>You can download a ZIP file containing all of the programs, plus a
+		  driver file, by downloading <A
+		  HREF="thinking_in_tkinter.zip">thinking_in_tkinter.zip</A>.</P> 
+		<P>This zip file contains the <I>Thinking in Tkinter</I> Python files,
+		  plus a driver program called <TT>thinking.py</TT> and a batch file called
+		  <TT>thinking.bat</TT>. To install these files, simply unzip the zip file into a
+		  directory (i.e. folder) of your choice. Once the have been unzipped, make that
+		  directory your current directory. You can then start the programs from the
+		  command prompt by entering:</P> 
+		<BLOCKQUOTE> <TT>python thinking.py</TT> </BLOCKQUOTE>
+		If you are in a Windows environment, you can start thinking.bat from the
+		command prompt simply by entering: 
+		<BLOCKQUOTE> <TT>thinking</TT> </BLOCKQUOTE>
+		at the command-line prompt. </BLOCKQUOTE>
+	 <BR> 
+	 <BLOCKQUOTE> 
+		<H3>Individual programs online</H3> 
+		<P>You can look at the individual programs online by clicking on the
+		  following links</P> 
+		<UL> 
+		  <LI><A HREF="thinking.py">thinking.py</A> - the driver program</LI> 
+		  <LI><A HREF="tt000.py">tt000.py</A> - introduction</LI> 
+		  <LI><A HREF="tt010.py">tt010.py</A> - simplest possible Tkinter
+			 program: 3 statements</LI> 
+		  <LI><A HREF="tt020.py">tt020.py</A> - creating a GUI object; packing;
+			 containers vs. widgets</LI> 
+		  <LI><A HREF="tt030.py">tt030.py</A> - creating a widget and putting it
+			 in a frame</LI> 
+		  <LI><A HREF="tt035.py">tt035.py</A> - using a class structure in the
+			 program</LI> 
+		  <LI><A HREF="tt040.py">tt040.py</A> - some other ways to define a
+			 widget</LI> 
+		  <LI><A HREF="tt050.py">tt050.py</A> - packing</LI> 
+		  <LI><A HREF="tt060.py">tt060.py</A> - event binding</LI> 
+		  <LI><A HREF="tt070.py">tt070.py</A> - "focus" and binding a widget to
+			 keyboard events</LI> 
+		  <LI><A HREF="tt074.py">tt074.py</A> - command binding</LI> 
+		  <LI><A HREF="tt075.py">tt075.py</A> - using event binding and command
+			 binding together</LI> 
+		  <LI><A HREF="tt076.py">tt076.py</A> - sharing information among event
+			 handlers</LI> 
+		  <LI><A HREF="tt077.py">tt077.py</A> - passing arguments to event
+			 handlers (part 1) - the problem</LI> 
+		  <LI><A HREF="tt078.py">tt078.py</A> - passing arguments to event
+			 handlers (part 2) - solving it with lambda</LI> 
+		  <LI><A HREF="tt079.py">tt079.py</A> - passing arguments to event
+			 handlers (part 3) - solving it with currying</LI> 
+		  <LI><A HREF="tt080.py">tt080.py</A> - widget options and pack
+			 settings</LI> 
+		  <LI><A HREF="tt090.py">tt090.py</A> - nesting frames</LI> 
+		  <LI><A HREF="tt095.py">tt095.py</A> - Window Manager methods &amp;
+			 controlling the size of windows with the <I>geometry</I> option</LI> 
+		  <LI><A HREF="tt100.py">tt100.py</A> - pack options: side, expand, fill,
+			 anchor</LI> 
+		</UL> <BR> </BLOCKQUOTE>
+	 <H3>Online Resources</H3> 
+	 <P>Tkinter</P> 
+	 <UL> 
+		<LI><BR> 
+		  <TABLE WIDTH="100%" CELLPADDING="10" CELLSPACING="0"> 
+			 <TR><TD WIDTH="60%"><A
+				  HREF="http://linuxdidattica.org/docs/altre_scuole/msm_p/txs_01.html">Tkinter
+				  per sopravvivere</A> by Prof. Massimo Piai is an article in Italian that uses
+				  some of the material from "Thinking in Tkinter"</TD><TD><A
+				  HREF="http://linuxdidattica.org/docs/altre_scuole/msm_p/txs_01.html"><IMG
+				  SRC="italy_flag.jpg" ALT="Flag of Italy" ALIGN="MIDDLE" WIDTH="60" HEIGHT="40"
+				  BORDER="2"></A></TD> 
+			 </TR> 
+		  </TABLE></LI> 
+		<LI>The <A HREF="http://www.python.org/topics/tkinter/doc.html">Tkinter
+		  page</A> at <A HREF="http://www.python.org">www.python.org</A></LI> 
+		<LI>Frederik Lundh's
+		  <A HREF="http://www.pythonware.com/library/index.htm">An Introduction to
+		  Tkinter</A> - <B>* Very useful!</B></LI> 
+		<LI><A
+		  HREF="http://www.nmt.edu/tcc/help/lang/python/tkinter.html">Tkinter: GUI
+		  Programming with Python</A> at New Mexico Tech Computer Center - <B>* Very
+		  useful!</B></LI> 
+		<LI>Russell Owen's
+		  <A HREF="http://www.astro.washington.edu/owen/TkinterSummary.html">Tkinter
+		  Summary</A> and
+		  <A HREF="http://www.astro.washington.edu/owen/ROTKFolklore.html">TKinter
+		  Folklore</A></LI> 
+		<LI><A HREF="http://bembry.org/tech/python/index.php">bembry.org</A> has
+		  some useful notes on Tkinter</LI> 
+		<LI><A
+		  HREF="http://www.faqts.com/knowledge_base/index.phtml/fid/264">Tkinter
+		  FAQTs</A></LI> 
+	 </UL> 
+	 <P>Tcl and Tk</P> 
+	 <UL> 
+		<LI>The site for Adrain Zimmer's book
+		  <A HREF="http://www.mapfree.com/sbf/tcl/book/select/Html/Contents.html">Tcl/Tk
+		  for Programmers</A> has three online chapters (11, 12, 13) on Tk.</LI> 
+		<LI><A HREF="http://www.tcl.tk/man/tcl8.4/TkCmd/contents.htm">Tk
+		  Commands</A> - online TK documentation</LI> 
+		<LI><A HREF="http://www.tcl.tk/">Tcl Developers Exchange</A></LI> 
+		<LI><A HREF="http://www.tcl.tk/man/tcl8.4/TkCmd/contents.htm">Online Tk
+		  documentation (for version 8.4 of Tcl)</A></LI> 
+	 </UL> <BR> 
+	 <H3>A Tip for Beginniners</H3> 
+	 <BLOCKQUOTE> 
+		<P>This is a problem that puzzles many beginning Tkinter programmers.
+		  Frederik Lundh has the answer.</P> 
+		<BLOCKQUOTE> 
+		  <PRE>From: bmgz (bmgz@dev.null)
+Subject: Tk -- stupid blank dialog opens up in background
+Newsgroups: comp.lang.python
+Date: 2003-12-13 02:38:17 PST</PRE> 
+		  <BLOCKQUOTE> 
+			 <P> I am just starting with Python. When I use Tk, a blank dialog
+				always opens up behind tkMessageBox or whatever other GUI element that one
+				executes. Is their a way of disabling this?</P></BLOCKQUOTE>
+		  <PRE>From: Fredrik Lundh (fredrik@pythonware.com)
+
+</PRE> 
+		  <BLOCKQUOTE> 
+			 <P>The "blank dialog" is Tkinter's root window. To eliminate that,
+				explicitly create a root and withdraw it before proceeding: </P> 
+			 <PRE>    root = Tkinter.Tk()
+    root.withdraw() # won't need this
+</PRE> 
+			 <P>If you're building a full-blown Tkinter application, the usual
+				approach is to put your widgets in the root window:</P> 
+			 <PRE>    root = Tkinter.Tk()
+
+    mybutton = Button(root, text=...)
+    mybutton.pack() # etc
+</PRE></BLOCKQUOTE>
+		</BLOCKQUOTE>
+	 </BLOCKQUOTE>
+	 <H3>Books</H3> 
+	 <UL> 
+		<LI><A
+		  HREF="http://www.amazon.com/exec/obidos/ASIN/0130220280/qid=1031879522/sr=2-1/ref=sr_2_1/103-5004459-9331864">Practical
+		  Programming in Tcl and Tk</A> by Brent Welch <B>- If you are going to be
+		  working with Tkinter extensively, you definitely should get a copy of this
+		  book. <I>Highly Recommended!</I></B></LI> 
+		<LI><A
+		  HREF="http://www.amazon.com/exec/obidos/tg/detail/-/1884777813/qid=1031882022/sr=1-1/ref=sr_1_1/103-5004459-9331864?v=glance&amp;s=books">Python
+		  and Tkinter Programming</A> by John Grayson</LI> 
+	 </UL> <BR> </BODY>
+</HTML>
